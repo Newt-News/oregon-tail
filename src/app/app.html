@@ -1,0 +1,52 @@
+<div class="game-container">
+
+  <!-- Header: Stats -->
+  <header class="game-header">
+    <div class="stat-group">
+      <span class="stat-label">Moisture</span>
+      <div class="stat-bar-container">
+        <div class="stat-bar moisture" [style.width.%]="moisture()"></div>
+      </div>
+    </div>
+
+    <div class="stat-group">
+      <span class="stat-label">Toxicity</span>
+      <div class="stat-bar-container">
+        <div class="stat-bar toxicity" [style.width.%]="toxicity()"></div>
+      </div>
+    </div>
+
+    <div class="stat-group text-only">
+      <span class="stat-label">Dist.</span>
+      <span class="stat-value">{{ distance() }}m</span>
+    </div>
+  </header>
+
+  <!-- Main: Scene -->
+  <main class="game-main" *ngIf="currentScene() as scene">
+
+    <!-- Image Placeholder -->
+    <div class="scene-visual-placeholder" [ngClass]="scene.cssClass">
+      <div class="pixel-art-frame">
+        <!-- Future sprite goes here -->
+        <span class="placeholder-text">Scene Visual</span>
+      </div>
+    </div>
+
+    <!-- Text Container -->
+    <div class="scene-text-container">
+      <p class="scene-text text-serif">{{ currentSceneText() }}</p>
+    </div>
+
+  </main>
+
+  <!-- Footer: Controls -->
+  <footer class="game-footer">
+    <div class="choice-container">
+      <button *ngFor="let choice of currentChoices()" class="choice-btn button-reset" (click)="makeChoice(choice)">
+        {{ choice.text }}
+      </button>
+    </div>
+  </footer>
+
+</div>

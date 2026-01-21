@@ -1,0 +1,47 @@
+// Variables - Pallette
+$color-newt-orange: #FF6F00; // Unken Reflex orange
+$color-forest-bg: #1a1e1a; // Dark forest floor
+$color-forest-dark: #0f120f;
+$color-text-primary: #e6e6e6;
+$color-text-secondary: #a0a0a0;
+$color-water: #4fc3f7; // Moisture
+$color-toxic: #ba68c8; // Toxicity
+$color-distance: #aed581; // Distance
+
+// Typography
+$font-family-serif: 'Merriweather', 'Georgia', serif;
+$font-family-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+// Global Resets & Base
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $color-forest-bg;
+    color: $color-text-primary;
+    font-family: $font-family-ui;
+    overflow: hidden; // Prevent body scroll, handle in containers
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+// BEM Utilities & Placeholders
+.button-reset {
+    appearance: none;
+    background: transparent;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+// Typography Classes
+.text-serif {
+    font-family: $font-family-serif;
+}
